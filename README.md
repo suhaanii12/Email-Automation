@@ -4,47 +4,48 @@ The code is organized into two main functions: one for sending emails and one fo
 
 Sending Emails:
 
-MIMEMultipart: Used to create a multipart message.
+1. MIMEMultipart: Used to create a multipart message.
 
-MIMEText: Adds the email body as plain text.
+2. MIMEText: Adds the email body as plain text.
 
-MIMEBase: Used to attach files.
+3. MIMEBase: Used to attach files.
 
-encoders.encode_base64: Encodes the attachment in base64.
+4. encoders.encode_base64: Encodes the attachment in base64.
 
-smtplib.SMTP: Creates an SMTP session for sending the email.
+5. smtplib.SMTP: Creates an SMTP session for sending the email.
 
-server.starttls(): Secures the connection.
+6. server.starttls(): Secures the connection.
 
-server.login(): Logs into the SMTP server.
+7. server.login(): Logs into the SMTP server.
 
-server.sendmail(): Sends the email.
+8. server.sendmail(): Sends the email.
+
 
 
 Reading Emails:
 
-imaplib.IMAP4_SSL: Connects to the IMAP server using SSL.
+1. imaplib.IMAP4_SSL: Connects to the IMAP server using SSL.
 
-mail.login(): Logs into the email account.
+2. mail.login(): Logs into the email account.
 
-mail.select(): Selects the mailbox (default is 'inbox').
+3. mail.select(): Selects the mailbox (default is 'inbox').
 
-mail.search(): Searches for all emails in the inbox.
+4. mail.search(): Searches for all emails in the inbox.
 
-mail.fetch(): Fetches the email data.
+5. mail.fetch(): Fetches the email data.
 
-email.message_from_bytes(): Parses the email content.
+6. email.message_from_bytes(): Parses the email content.
 
-decode_header(): Decodes the email subject and attachment filename.
+7. decode_header(): Decodes the email subject and attachment filename.
 
-msg.is_multipart(): Checks if the email is multipart.
+8. msg.is_multipart(): Checks if the email is multipart.
 
-msg.walk(): Iterates through the email parts.
+9. msg.walk(): Iterates through the email parts.
 
-part.get_filename(): Retrieves the attachment filename.
+10. part.get_filename(): Retrieves the attachment filename.
 
-os.path.join(): Joins directory and filename to create the full file path.
+11. os.path.join(): Joins directory and filename to create the full file path.
 
-os.makedirs(): Creates directories if they do not exist.
+12. os.makedirs(): Creates directories if they do not exist.
 
-part.get_payload(decode=True): Decodes the attachment payload and saves it.
+13. part.get_payload(decode=True): Decodes the attachment payload and saves it.
